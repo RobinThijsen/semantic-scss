@@ -1,0 +1,19 @@
+{
+  "name": "semantic-scss",
+  "version": "0.1.0",
+  "description": "semantic black & white theme scss",
+  "main": "/",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RobinThijsen/semantic-scss.git"
+  },
+  "author": "Robin Thijsen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RobinThijsen/semantic-scss/issues"
+  },
+  "homepage": "https://github.com/RobinThijsen/semantic-scss#readme"
+}

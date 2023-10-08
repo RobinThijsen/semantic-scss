@@ -4,58 +4,144 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="css/semantic-css.css" />
+    <link rel="stylesheet" href="prism.css" />
 </head>
 <body>
-    <header>
-        <h1><a>Title</a></h1>
-        <menu>
-            <li><a href="#">HTML</a></li>
-            <li><a href="#">CSS</a></li>
-            <li><a href="#">JavaScript</a></li>
-        </menu>
-    </header>
-    <main>
-        <section class="row">
-            <article>
-                <h2>Button standard</h2>
-                <button class="standard" type="submit">Hello</button>
-            </article>
-            <article>
-                <h2>Button border</h2>
-                <button class="border" type="submit">Hello</button>
-            </article>
-            <article>
-                <h2>Button color</h2>
-                <button class="color" type="submit">Hello</button>
-            </article>
-        </section>
-        <section class="grid">
-            <article>
-                <h2>List items</h2>
-                <ul class="items">
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>JavaScript</li>
-                    <li>PHP</li>
-                </ul>
-            </article>
-            <article>
-                <h2>List card</h2>
-                <ul class="card">
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>JavaScript</li>
-                    <li>PHP</li>
-                </ul>
-                <h2>List card with link</h2>
-                <ul class="card link">
-                    <li><a href="#">HTML</a></li>
-                    <li><a href="#">CSS</a></li>
-                    <li><a href="#">Script</a></li>
-                    <li><a href="#">PHP</a></li>
-                </ul>
-            </article>
-        </section>
+    <style>
+        body {
+            padding: 5vh 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 5vh;
+        }
+
+        div {
+            border: 1px solid black;
+            width: 85%;
+            padding: 5vh 2vw;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 2vh;
+        }
+
+        div pre {
+            padding: 2vh .5vw;
+            background: hsla(0, 0%, 0%, .05);
+            border-radius: 10px;
+        }
+    </style>
+
+    <h1>header</h1>
+    <div>
+        <header>
+            <h1><a>Title</a></h1>
+            <menu>
+                <li><a href="#">html</a></li>
+                <li><a href="#">css</a></li>
+                <li><a href="#">javascript</a></li>
+            </menu>
+        </header>
+        <pre>
+            <code class="language-xml">
+    &lt;header&gt;
+        &lt;h1&gt;&lt;a&gt;Title&lt;/a&gt;&lt;/h1&gt;
+        &lt;menu&gt;
+            &lt;li&gt;&lt;a href="#"&gt;html&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;css&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;javascript&lt;/a&gt;&lt;/li&gt;
+        &lt;/menu&gt;
+    &lt;/header&gt;
+            </code>
+        </pre>
+    </div>
+
+    <h1>Button</h1>
+    <div>
+        <article>
+            <h2>Button standard</h2>
+            <button class="standard" type="submit">Hello</button>
+        </article>
+        <article>
+            <h2>Button border</h2>
+            <button class="border" type="submit">Hello</button>
+        </article>
+        <article>
+            <h2>Button color</h2>
+            <button class="color" type="submit">Hello</button>
+        </article>
+        <pre>
+            <code class="language-xml">
+    &lt;button class="standard" type="submit"&gt;Hello&lt;/button&gt;
+    &lt;button class="border" type="submit"&gt;Hello&lt;/button&gt;
+    &lt;button class="color" type="submit"&gt;Hello&lt;/button&gt;
+            </code>
+        </pre>
+    </div>
+    <h1>Lists</h1>
+    <div>
+        <div>
+            <h2>List items</h2>
+            <ul class="items">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>PHP</li>
+            </ul>
+            <pre>
+                <code class="language-xml">
+    &lt;ul class="items"&gt;
+        &lt;li&gt;HTML&lt;/li&gt;
+        &lt;li&gt;CSS&lt;/li&gt;
+        &lt;li&gt;JavaScript&lt;/li&gt;
+        &lt;li&gt;PHP&lt;/li&gt;
+    &lt;/ul&gt;
+                </code>
+            </pre>
+        </div>
+        <div>
+            <h2>List card</h2>
+            <ul class="card">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>PHP</li>
+            </ul>
+            <pre>
+                <code class="language-xml">
+    &lt;ul class="card"&gt;
+        &lt;li&gt;HTML&lt;/li&gt;
+        &lt;li&gt;CSS&lt;/li&gt;
+        &lt;li&gt;JavaScript&lt;/li&gt;
+        &lt;li&gt;PHP&lt;/li&gt;
+    &lt;/ul&gt;
+                </code>
+            </pre>
+        </div>
+        <div>
+            <h2>List card with link</h2>
+            <ul class="card link">
+                <li><a href="#">HTML</a></li>
+                <li><a href="#">CSS</a></li>
+                <li><a href="#">Script</a></li>
+                <li><a href="#">PHP</a></li>
+            </ul>
+            <pre>
+                <code class="language-xml">
+    &lt;ul class="card link"&gt;
+        &lt;li&gt;&lt;a href="#"&gt;HTML&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;CSS&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Script&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;PHP&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+                </code>
+            </pre>
+        </div>
+    </div>
+    <h1>Dark background</h1>
+    <div>
         <section class="dark">
             <h2>Dark section</h2>
             <ul>
@@ -64,28 +150,71 @@
                 <li><a href="#">JavaScript</a></li>
             </ul>
         </section>
-        <section>
-            <h2>Form</h2>
-            <form>
-                <fieldset>
-                    <label for="email">Email</label>
-                    <input id="email" type="email" name="email" placeholder="example@gmail.com" />
-                </fieldset>
-                <fieldset>
-                    <label for="password">Password</label>
-                    <input id="password" type="password" name="password" placeholder="***********" />
-                </fieldset>
-                <button class="standard" type="submit">Connection</button>
-            </form>
-        </section>
-    </main>
-    <footer>
-        <h2>Footer</h2>
-        <ul>
-            <li><a href="#">HTML</a></li>
-            <li><a href="#">CSS</a></li>
-            <li><a href="#">JavaScript</a></li>
-        </ul>
-    </footer>
+        <pre>
+            <code class="language-xml">
+&lt;section class="dark"&gt;
+    &lt;h2&gt;Dark section&lt;/h2&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#"&gt;HTML&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;CSS&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;JavaScript&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/section&gt;
+            </code>
+        </pre>
+    </div>
+    <h1>Form</h1>
+    <div>
+        <form>
+            <fieldset>
+                <label for="email">Email</label>
+                <input id="email" type="email" name="email" placeholder="example@gmail.com" />
+            </fieldset>
+            <fieldset>
+                <label for="password">Password</label>
+                <input id="password" type="password" name="password" placeholder="***********" />
+            </fieldset>
+            <button class="standard" type="submit">Connection</button>
+        </form>
+        <pre>
+            <code class="language-xml">
+&lt;form&gt;
+    &lt;fieldset&gt;
+        &lt;label for="email"&gt;Email&lt;/label&gt;
+        &lt;input id="email" type="email" name="email" placeholder="example@gmail.com" /&gt;
+    &lt;/fieldset&gt;
+    &lt;fieldset&gt;
+        &lt;label for="password"&gt;Password&lt;/label&gt;
+        &lt;input id="password" type="password" name="password" placeholder="***********" /&gt;
+    &lt;/fieldset&gt;
+    &lt;button class="standard" type="submit"&gt;Connection&lt;/button&gt;
+&lt;/form&gt;
+            </code>
+        </pre>
+    </div>
+    <h1>Footer</h1>
+    <div>
+        <footer>
+            <h2>Footer</h2>
+            <ul>
+                <li><a href="#">HTML</a></li>
+                <li><a href="#">CSS</a></li>
+                <li><a href="#">JavaScript</a></li>
+            </ul>
+        </footer>
+        <pre>
+            <code class="language-xml">
+&lt;footer&gt;
+    &lt;h2&gt;Footer&lt;/h2&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#"&gt;HTML&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;CSS&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;JavaScript&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/footer&gt;
+            </code>
+        </pre>
+    </div>
+    <script src="prism.js"></script>
 </body>
 </html>
