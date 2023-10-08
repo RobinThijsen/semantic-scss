@@ -1,0 +1,23 @@
+footer {
+  width: 100%;
+  height: auto;
+  padding: 8vh 2vw;
+  color: $text-white;
+  background: $background-black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5vh;
+
+  ul {
+
+    li a {
+      color: $text-white;
+
+      &::after {
+        background: $background-white;
+      }
+    }
+  }
+}

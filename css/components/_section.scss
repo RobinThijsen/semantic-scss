@@ -1,0 +1,32 @@
+section {
+  width: 100%;
+  height: auto;
+  padding: 10vh 2vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5vh;
+
+  &.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &.row {
+    flex-direction: row;
+  }
+
+  &.dark {
+    background: $border-black;
+    color: $text-white;
+
+    a {
+      color: $text-white;
+
+      &::after {
+        background: $text-white;
+      }
+    }
+  }
+}

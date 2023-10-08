@@ -1,0 +1,48 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: $text-black;
+  position: relative;
+  cursor: pointer;
+
+  &::after {
+    position: absolute;
+    bottom: - .2rem;
+    left: 0;
+    content: "";
+    width: 0;
+    height: 2px;
+    background: $background-black;
+    transition: all .3s ease;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+}
+
+button, fieldset, input, textarea {
+  border: none;
+  background: none;
+  outline: none;
+}
+
+ul, menu {
+  list-style-type: none;
+}
+
+body {
+  width: 100vw;
+  min-height: 100vh;
+
+  main {
+    width: 100%;
+    height: auto;
+  }
+}
