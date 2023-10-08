@@ -32,5 +32,5 @@ Now you can create your most beautiful semantic html based on our documentation 
 
 ### Documentation
 
-[Here]() is a documentation about how to create semantic html, like that css will work fine.
+[Here](https://robinthijsen.github.io/semantic-scss/) is a documentation about how to create semantic html, like that css will work fine.
 For any notes about semantic please contact us by email: `semantic-css@gmail.com`
