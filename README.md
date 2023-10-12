@@ -24,9 +24,9 @@ Install the package on your project with npm command line:
 
 `npm i semantic-scss`
 
-And import the css:
+And import the css in your css file:
 
-`import "/semantic-scss/css/sematic-css"`
+`@import "semantic-scss/css/sematic-css";`
 
 Now you can create your most beautiful semantic html based on our documentation and css will automatically style your components
 
