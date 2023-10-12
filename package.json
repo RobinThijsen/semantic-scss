@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/RobinThijsen/semantic-scss/issues"
   },
-  "homepage": "https://github.com/RobinThijsen/semantic-scss#readme"
+  "homepage": "https://github.com/RobinThijsen/semantic-scss#readme",
+  "dependencies": {
+    "highlight.js": "^11.9.0"
+  }
 }

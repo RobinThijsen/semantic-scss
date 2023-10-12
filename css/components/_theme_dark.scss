@@ -1,0 +1,70 @@
+body.dark {
+  background: $background-black;
+  color: $text-white;
+
+  a {
+    color: $text-white;
+
+    &::after { background: $text-white }
+  }
+
+  header {
+    background: transparent;
+    border-bottom-color: $border-white-1;
+  }
+
+  button.standard {
+    background: $background-white;
+    color: $text-black;
+
+    &:hover {
+      background: transparent;
+      border-color: $border-white;
+      color: $text-white;
+    }
+  }
+
+  button.border {
+    background: transparent;
+    color: $text-white;
+    border-color: $text-white;
+
+    &:hover {
+      background: $background-white;
+      color: $text-black;
+      border-color: $border-black;
+    }
+  }
+
+  table {
+    border-color: $border-white-05;
+
+    thead {
+      background: $background-white;
+
+      th { color: $text-black }
+    }
+
+    tbody tr:nth-child(even) { background: $border-black-25 }
+  }
+
+  ul.items li:hover,
+  ul.card li {
+    background: $border-black-25;
+  }
+
+  ul.link li:hover { background: $border-black-35 }
+
+  section.dark { background: $border-black-35 }
+
+  form input {
+    border-color: $border-white-2;
+    color: $text-white;
+
+    &::placeholder { color: $border-white-2 }
+
+    &:hover {
+      border-color: $border-white;
+    }
+  }
+}

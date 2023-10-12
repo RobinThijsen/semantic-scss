@@ -1,0 +1,89 @@
+pre {
+  padding: 2vh .5vw;
+  background: $border-black-05;
+  border-radius: 10px;
+  position: relative;
+
+  button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: .5em;
+    background: $border-black-05;
+    border-color: $border-black-1;
+    color: $border-black-15;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & span {
+      position: absolute;
+      bottom: -2rem;
+      padding: .25rem;
+      background: hsl(0, 0%, 16%);
+      border-radius: 5px;
+      color: $text-white;
+      display: none;
+      z-index: 1000;
+
+      &.active {
+        display: inline;
+      }
+    }
+
+    &:hover {
+      background: $border-black-1;
+      border-color: $border-black-15;
+
+      span.copy {
+        display: inline;
+      }
+    }
+  }
+
+  &.language-html {
+
+    span {
+      font-family: 'Monaco', sans-serif;
+      font-weight: 700;
+      font-size: .9rem;
+      line-height: 1.2rem;
+      letter-spacing: .5px;
+
+      &.balise { color: hsla(0, 0%, 25%, 0.5); }
+
+      &.balise-content { color: hsl(210, 64%, 38%); }
+
+      &.content { color: hsl(0, 0%, 18%); }
+
+      &.attribute { color: hsl(214, 73%, 64%); }
+
+      &.string { color: hsl(142, 46%, 35%); }
+    }
+
+    &.dark {
+      background: hsl(0, 0%, 15%);
+
+      span.content { color: hsl(0, 0%, 90%); }
+
+      span.balise { color: hsla(0, 0%, 92%, .35); }
+
+      span.balise-content { color: hsl(211, 55%, 60%); }
+
+      span.attribute { color: hsl(201, 97%, 86%); }
+
+      span.string { color: hsl(30, 58%, 69%); }
+
+      button {
+        background: $border-white-1;
+        border-color: $border-white-15;
+        color: $border-white-2;
+
+        &:hover {
+          background: $border-white-15;
+          border-color: $border-white-2;
+        }
+      }
+    }
+  }
+}

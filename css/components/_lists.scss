@@ -15,23 +15,8 @@ ul {
       border-bottom: 1px solid $border-black-05;
       position: relative;
 
-      &::after {
-        content: "";
-        width: 0;
-        height: 2px;
-        background: $border-blue;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        transition: all .3s ease;
-      }
-
       &:hover {
         background: $border-black-05;
-
-        &::after {
-          width: 100%;
-        }
       }
 
       &:last-child {
@@ -51,6 +36,27 @@ ul {
       padding: 1rem;
       border-radius: 5px;
       background: $border-black-05;
+    }
+
+    &.big {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+
+      li {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: .5rem;
+
+        p {
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          line-clamp: 2;
+          -webkit-box-orient: vertical;
+          margin-top: .5rem;
+        }
+      }
     }
 
     &.link li {

@@ -2,219 +2,559 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Documentation - semantic-scss</title>
     <link rel="stylesheet" href="css/semantic-css.css" />
-    <link rel="stylesheet" href="prism.css" />
+    <script src="https://kit.fontawesome.com/513e9627f7.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <style>
-        body {
-            padding: 5vh 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 5vh;
-        }
+    <main class="aside">
+        <button onclick="function darkTheme() {
+            const body = document.body
+            const pres = document.querySelectorAll('pre')
+            pres.forEach((pre) => pre.classList.toggle('dark'))
+            body.classList.toggle('dark')
+        } darkTheme()" id="dark"><i class="fa-solid fa-circle-half-stroke"></i></button>
+        <style>
+            body.dark button:first-child {
+                color: hsl(100, 100%, 100%);
+            }
 
-        div {
-            border: 1px solid black;
-            width: 85%;
-            padding: 5vh 2vw;
-            border-radius: 10px;
-            display: flex;
-            flex-direction: column;
-            gap: 2vh;
-        }
+            main button:first-child {
+                position: fixed;
+                top: 2vw;
+                right: 2vw;
+                color: hsl(0, 0%, 10%);
+                padding: 0;
+                border: none;
+                border-radius: 0;
+            }
 
-        div pre {
-            padding: 2vh .5vw;
-            background: hsla(0, 0%, 0%, .05);
-            border-radius: 10px;
-        }
-    </style>
+            body main {
+                padding: 5vh 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 5vh;
+                position: relative;
+            }
 
-    <h1>header</h1>
-    <div>
-        <header>
-            <h1><a>Title</a></h1>
+            div {
+                border: 1px solid black;
+                width: 85%;
+                padding: 5vh 2vw;
+                border-radius: 10px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 2vh;
+            }
+
+            div pre { width: 100% }
+
+            div div {
+                border-radius: 0;
+                border: none;
+                border-bottom: 1px solid hsla(0, 0%, 0%, .5);
+            }
+
+            div div:last-child { border-bottom: none }
+
+            div div pre { width: 100% }
+        </style>
+        <aside>
             <menu>
-                <li><a href="#">html</a></li>
-                <li><a href="#">css</a></li>
-                <li><a href="#">javascript</a></li>
+                <li>
+                    <span>component<i class="fa-solid fa-link"></i></span>
+                    <menu>
+                        <li><a href="#header">header</a></li>
+                        <li><a href="#button">button</a></li>
+                        <li><a href="#table">table</a></li>
+                        <li><a href="#lists">lists</a></li>
+                        <li><a href="#dark-bg">dark-bg</a></li>
+                        <li><a href="#form">form</a></li>
+                        <li><a href="#footer">footer</a></li>
+                    </menu>
+                </li>
             </menu>
-        </header>
-        <pre>
-            <code class="language-xml">
-    &lt;header&gt;
-        &lt;h1&gt;&lt;a&gt;Title&lt;/a&gt;&lt;/h1&gt;
-        &lt;menu&gt;
-            &lt;li&gt;&lt;a href="#"&gt;html&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="#"&gt;css&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="#"&gt;javascript&lt;/a&gt;&lt;/li&gt;
-        &lt;/menu&gt;
-    &lt;/header&gt;
-            </code>
-        </pre>
-    </div>
-
-    <h1>Button</h1>
-    <div>
-        <article>
-            <h2>Button standard</h2>
-            <button class="standard" type="submit">Hello</button>
-        </article>
-        <article>
-            <h2>Button border</h2>
-            <button class="border" type="submit">Hello</button>
-        </article>
-        <article>
-            <h2>Button color</h2>
-            <button class="color" type="submit">Hello</button>
-        </article>
-        <pre>
-            <code class="language-xml">
-    &lt;button class="standard" type="submit"&gt;Hello&lt;/button&gt;
-    &lt;button class="border" type="submit"&gt;Hello&lt;/button&gt;
-    &lt;button class="color" type="submit"&gt;Hello&lt;/button&gt;
-            </code>
-        </pre>
-    </div>
-    <h1>Lists</h1>
-    <div>
+        </aside>
+        <section>
+        <h1>header<a name="header"></a></h1>
         <div>
-            <h2>List items</h2>
-            <ul class="items">
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
-                <li>PHP</li>
-            </ul>
-            <pre>
-                <code class="language-xml">
-    &lt;ul class="items"&gt;
-        &lt;li&gt;HTML&lt;/li&gt;
-        &lt;li&gt;CSS&lt;/li&gt;
-        &lt;li&gt;JavaScript&lt;/li&gt;
-        &lt;li&gt;PHP&lt;/li&gt;
-    &lt;/ul&gt;
+            <header>
+                <h1><a>Title</a></h1>
+                <menu>
+                    <li><a href="#">link1</a></li>
+                    <li><a href="#">link2</a></li>
+                    <li><a href="#">link3</a></li>
+                </menu>
+            </header>
+            <pre class="language-html">
+                <code>
+            <span class="balise">&lt;</span><span class="balise-content">header</span><span class="balise">&gt;</span>
+                <span class="balise">&lt;</span><span class="balise-content">h1</span><span class="balise">&gt;</span><span class="content">Title</span><span class="balise">&lt;/</span><span class="balise-content">h1</span><span class="balise">&gt;</span>
+                <span class="balise">&lt;</span><span class="balise-content">menu</span><span class="balise">&gt;</span>
+                    <span class="balise">&lt;</span><span class="balise-content">li</span><span class="balise">&gt;</span><span class="balise">&lt;</span><span class="balise-content">a</span><span class="attribute"> href=</span><span class="string">"#"</span><span class="balise">&gt;</span><span class="content">link1</span><span class="balise">&lt;/</span><span class="balise-content">a</span><span class="balise">&gt;</span><span class="balise">&lt;/</span><span class="balise-content">li</span><span class="balise">&gt;</span>
+                    <span class="balise">&lt;</span><span class="balise-content">li</span><span class="balise">&gt;</span><span class="balise">&lt;</span><span class="balise-content">a</span><span class="attribute"> href=</span><span class="string">"#"</span><span class="balise">&gt;</span><span class="content">link2</span><span class="balise">&lt;/</span><span class="balise-content">a</span><span class="balise">&gt;</span><span class="balise">&lt;/</span><span class="balise-content">li</span><span class="balise">&gt;</span>
+                    <span class="balise">&lt;</span><span class="balise-content">li</span><span class="balise">&gt;</span><span class="balise">&lt;</span><span class="balise-content">a</span><span class="attribute"> href=</span><span class="string">"#"</span><span class="balise">&gt;</span><span class="content">link3</span><span class="balise">&lt;/</span><span class="balise-content">a</span><span class="balise">&gt;</span><span class="balise">&lt;/</span><span class="balise-content">li</span><span class="balise">&gt;</span>
+                <span class="balise">&lt;/</span><span class="balise-content">menu</span><span class="balise">&gt;</span>
+            <span class="balise">&lt;/</span><span class="balise-content">header</span><span class="balise">&gt;</span>
+                    <button onclick="function cop() {
+                        const header = document.getElementById('header')
+                        copy(header, 'button#header span.copied')
+                    } cop()" value="<header>
+        <h1>Title</h1>
+        <menu>
+            <li><a href='#'>link1</a></li>
+            <li><a href='#'>link2</a></li>
+            <li><a href='#'>link3</a></li>
+        </menu>
+    </header>" id="header">
+                        <i class="fa-solid fa-copy"></i>
+                        <span class="copy">Copy to clipboard</span>
+                        <span class="copied">Copied</span>
+                    </button>
                 </code>
             </pre>
         </div>
+        <h1>Button<a name="button"></a></h1>
         <div>
-            <h2>List card</h2>
-            <ul class="card">
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
-                <li>PHP</li>
-            </ul>
-            <pre>
-                <code class="language-xml">
-    &lt;ul class="card"&gt;
-        &lt;li&gt;HTML&lt;/li&gt;
-        &lt;li&gt;CSS&lt;/li&gt;
-        &lt;li&gt;JavaScript&lt;/li&gt;
-        &lt;li&gt;PHP&lt;/li&gt;
-    &lt;/ul&gt;
+            <article>
+                <h2>Button standard</h2>
+                <button class="standard" type="submit">Hello</button>
+            </article>
+            <article>
+                <h2>Button border</h2>
+                <button class="border" type="submit">Hello</button>
+            </article>
+            <article>
+                <h2>Button color</h2>
+                <button class="color" type="submit">Hello</button>
+            </article>
+            <pre class="language-html">
+                <code>
+            <span class="balise">&lt;</span><span class="balise-content">button</span><span class="attribute"> class=</span><span class="string">"standard" </span><span class="attribute">type=</span><span class="string">"submit"</span><span class="balise">&gt;</span><span class="content">Hello</span><span class="balise">&lt;/</span><span class="balise-content">button</span><span class="balise">&gt;</span>
+            <span class="balise">&lt;</span><span class="balise-content">button</span><span class="attribute"> class=</span><span class="string">"border" </span><span class="attribute">type=</span><span class="string">"submit"</span><span class="balise">&gt;</span><span class="content">Hello</span><span class="balise">&lt;/</span><span class="balise-content">button</span><span class="balise">&gt;</span>
+            <span class="balise">&lt;</span><span class="balise-content">button</span><span class="attribute"> class=</span><span class="string">"color" </span><span class="attribute">type=</span><span class="string">"submit"</span><span class="balise">&gt;</span><span class="content">Hello</span><span class="balise">&lt;/</span><span class="balise-content">button</span><span class="balise">&gt;</span>
+                    <button onclick="function cop() {
+                        const button = document.getElementById('button')
+                        copy(button, 'button#button span.copied')
+                    } cop()" value="<button class='standard' type='submit'>Content</button>
+    <button class='border' type='submit'>Content</button>
+    <button class='color' type='submit'>Content</button>" id="button">
+                        <i class="fa-solid fa-copy"></i>
+                        <span class="copy">Copy to clipboard</span>
+                        <span class="copied">Copied</span>
+                    </button>
                 </code>
             </pre>
         </div>
+        <h1>Table<a name="table"></a></h1>
         <div>
-            <h2>List card with link</h2>
-            <ul class="card link">
-                <li><a href="#">HTML</a></li>
-                <li><a href="#">CSS</a></li>
-                <li><a href="#">Script</a></li>
-                <li><a href="#">PHP</a></li>
-            </ul>
-            <pre>
-                <code class="language-xml">
-    &lt;ul class="card link"&gt;
-        &lt;li&gt;&lt;a href="#"&gt;HTML&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#"&gt;CSS&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#"&gt;Script&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#"&gt;PHP&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
+            <table>
+                <thead>
+                    <tr>
+                        <th>Language</th>
+                        <th>skills</th>
+                        <th>year</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>HTML</td>
+                        <td>4/5</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>CSS</td>
+                        <td>4/5</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>JavaScript</td>
+                        <td>3.5/5</td>
+                        <td>2.5</td>
+                    </tr>
+                </tbody>
+            </table>
+            <pre class="language-html">
+                <code>
+            <span class="balise">&lt;</span><span class="balise-content">table</span><span class="balise">&gt;</span>
+                <span class="balise">&lt;</span><span class="balise-content">thead</span><span class="balise">&gt;</span>
+                    <span class="balise">&lt;</span><span class="balise-content">tr</span><span class="balise">&gt;</span>
+                        <span class="balise">&lt;</span><span class="balise-content">td</span><span class="balise">&gt;</span><span class="content">Language</span><span class="balise">&lt;/</span><span class="balise-content">td</span><span class="balise">&gt;</span>
+                        <span class="balise">&lt;</span><span class="balise-content">td</span><span class="balise">&gt;</span><span class="content">skills</span><span class="balise">&lt;/</span><span class="balise-content">td</span><span class="balise">&gt;</span>
+                        <span class="balise">&lt;</span><span class="balise-content">td</span><span class="balise">&gt;</span><span class="content">year</span><span class="balise">&lt;/</span><span class="balise-content">td</span><span class="balise">&gt;</span>
+                    <span class="balise">&lt;/</span><span class="balise-content">tr</span><span class="balise">&gt;</span>
+                <span class="balise">&lt;/</span><span class="balise-content">thead</span><span class="balise">&gt;</span>
+                <span class="balise">&lt;</span><span class="balise-content">tbody</span><span class="balise">&gt;</span>
+                    <span class="balise">&lt;</span><span class="balise-content">tr</span><span class="balise">&gt;</span>
+                        <span class="balise">&lt;</span><span class="balise-content">td</span><span class="balise">&gt;</span><span class="content">HTMl</span><span class="balise">&lt;/</span><span class="balise-content">td</span><span class="balise">&gt;</span>
+                        <span class="balise">&lt;</span><span class="balise-content">td</span><span class="balise">&gt;</span><span class="content">4/5</span><span class="balise">&lt;/</span><span class="balise-content">td</span><span class="balise">&gt;</span>
+                        <span class="balise">&lt;</span><span class="balise-content">td</span><span class="balise">&gt;</span><span class="content">4</span><span class="balise">&lt;/</span><span class="balise-content">td</span><span class="balise">&gt;</span>
+                    <span class="balise">&lt;/</span><span class="balise-content">tr</span><span class="balise">&gt;</span>
+                    <span class="balise">&lt;</span><span class="balise-content">tr</span><span class="balise">&gt;</span>
+                        <span class="balise">&lt;</span><span class="balise-content">td</span><span class="balise">&gt;</span><span class="content">CSS</span><span class="balise">&lt;/</span><span class="balise-content">td</span><span class="balise">&gt;</span>
+                        <span class="balise">&lt;</span><span class="balise-content">td</span><span class="balise">&gt;</span><span class="content">4/5</span><span class="balise">&lt;/</span><span class="balise-content">td</span><span class="balise">&gt;</span>
+                        <span class="balise">&lt;</span><span class="balise-content">td</span><span class="balise">&gt;</span><span class="content">4</span><span class="balise">&lt;/</span><span class="balise-content">td</span><span class="balise">&gt;</span>
+                    <span class="balise">&lt;/</span><span class="balise-content">tr</span><span class="balise">&gt;</span>
+                    <span class="balise">&lt;</span><span class="balise-content">tr</span><span class="balise">&gt;</span>
+                        <span class="balise">&lt;</span><span class="balise-content">td</span><span class="balise">&gt;</span><span class="content">JavaScript</span><span class="balise">&lt;/</span><span class="balise-content">td</span><span class="balise">&gt;</span>
+                        <span class="balise">&lt;</span><span class="balise-content">td</span><span class="balise">&gt;</span><span class="content">3.5/5</span><span class="balise">&lt;/</span><span class="balise-content">td</span><span class="balise">&gt;</span>
+                        <span class="balise">&lt;</span><span class="balise-content">td</span><span class="balise">&gt;</span><span class="content">2.5</span><span class="balise">&lt;/</span><span class="balise-content">td</span><span class="balise">&gt;</span>
+                    <span class="balise">&lt;/</span><span class="balise-content">tr</span><span class="balise">&gt;</span>
+                <span class="balise">&lt;/</span><span class="balise-content">tbody</span><span class="balise">&gt;</span>
+            <span class="balise">&lt;/</span><span class="balise-content">table</span><span class="balise">&gt;</span>
+                    <button onclick="function cop() {
+                        const button = document.getElementById('table')
+                        copy(button, 'button#table span.copied')
+                    } cop()" value="<table>
+        <thead>
+            <tr>
+                <th>Language</th>
+                <th>skills</th>
+                <th>year</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>HTML</td>
+                <td>4/5</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>CSS</td>
+                <td>4/5</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>JavaScript</td>
+                <td>3.5/5</td>
+                <td>2.5</td>
+            </tr>
+        </tbody>
+    </table>" id="table">
+                        <i class="fa-solid fa-copy"></i>
+                        <span class="copy">Copy to clipboard</span>
+                        <span class="copied">Copied</span>
+                    </button>
                 </code>
             </pre>
         </div>
-    </div>
-    <h1>Dark background</h1>
-    <div>
-        <section class="dark">
-            <h2>Dark section</h2>
-            <ul>
-                <li><a href="#">HTML</a></li>
-                <li><a href="#">CSS</a></li>
-                <li><a href="#">JavaScript</a></li>
-            </ul>
+        <h1>Lists<a name="lists"></a></h1>
+        <div>
+            <div>
+                <h2>List items</h2>
+                <ul class="items">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>PHP</li>
+                </ul>
+                <pre class="language-html">
+                    <code>
+            <span class="balise">&lt;</span><span class="balise-content">ul</span><span class="attribute"> class=</span><span class="string">"items"</span><span class="balise">&gt;</span>
+                <span class="balise">&lt;</span><span class="balise-content">li</span><span class="balise">&gt;</span><span class="content">HTML</span><span class="balise">&lt;/</span><span class="balise-content">li</span><span class="balise">&gt;</span>
+                <span class="balise">&lt;</span><span class="balise-content">li</span><span class="balise">&gt;</span><span class="content">CSS</span><span class="balise">&lt;/</span><span class="balise-content">li</span><span class="balise">&gt;</span>
+                <span class="balise">&lt;</span><span class="balise-content">li</span><span class="balise">&gt;</span><span class="content">JavaScript</span><span class="balise">&lt;/</span><span class="balise-content">li</span><span class="balise">&gt;</span>
+            <span class="balise">&lt;/</span><span class="balise-content">ul</span><span class="balise">&gt;</span>
+                    <button onclick="function cop() {
+                        const button = document.getElementById('list-items')
+                        copy(button, 'button#list-items span.copied')
+                    } cop()" value="<ul class='items'>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ul>" id="list-items">
+                        <i class="fa-solid fa-copy"></i>
+                        <span class="copy">Copy to clipboard</span>
+                        <span class="copied">Copied</span>
+                    </button>
+                    </code>
+                </pre>
+            </div>
+            <div>
+                <h2>List card</h2>
+                <ul class="card">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>PHP</li>
+                </ul>
+                <pre class="language-html">
+                    <code>
+            <span class="balise">&lt;</span><span class="balise-content">ul</span><span class="attribute"> class=</span><span class="string">"card"</span><span class="balise">&gt;</span>
+                <span class="balise">&lt;</span><span class="balise-content">li</span><span class="balise">&gt;</span><span class="content">HTML</span><span class="balise">&lt;/</span><span class="balise-content">li</span><span class="balise">&gt;</span>
+                <span class="balise">&lt;</span><span class="balise-content">li</span><span class="balise">&gt;</span><span class="content">CSS</span><span class="balise">&lt;/</span><span class="balise-content">li</span><span class="balise">&gt;</span>
+                <span class="balise">&lt;</span><span class="balise-content">li</span><span class="balise">&gt;</span><span class="content">JavaScript</span><span class="balise">&lt;/</span><span class="balise-content">li</span><span class="balise">&gt;</span>
+            <span class="balise">&lt;/</span><span class="balise-content">ul</span><span class="balise">&gt;</span>
+                    <button onclick="function cop() {
+                        const button = document.getElementById('list-card')
+                        copy(button, 'button#list-card span.copied')
+                    } cop()" value="<ul class='card'>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ul>" id="list-card">
+                        <i class="fa-solid fa-copy"></i>
+                        <span class="copy">Copy to clipboard</span>
+                        <span class="copied">Copied</span>
+                    </button>
+                    </code>
+                </pre>
+            </div>
+            <div>
+                <h2>List big card</h2>
+                <ul class="card big">
+                    <li>
+                        <h2>HTML</h2>
+                        <em><strong>level:</strong> 300</em>
+                        <p><strong>Description:</strong> Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles</p>
+                    </li>
+                    <li>
+                        <h2>CSS</h2>
+                        <em><strong>level:</strong> 300</em>
+                        <p><strong>Description:</strong> Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles</p>
+                    </li>
+                    <li>
+                        <h2>JavaScript</h2>
+                        <em><strong>level:</strong> 300</em>
+                        <p><strong>Description:</strong> Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles</p>
+                    </li>
+                    <li>
+                        <h2>PHP</h2>
+                        <em><strong>level:</strong> 300</em>
+                        <p><strong>Description:</strong> Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles</p>
+                    </li>
+                </ul>
+                <pre class="language-html">
+                    <code>
+            <span class="balise">&lt;</span><span class="balise-content">ul</span><span class="attribute"> class=</span><span class="string">"card big"</span><span class="balise">&gt;</span>
+                <span class="balise">&lt;</span><span class="balise-content">li</span><span class="balise">&gt;</span>
+                    <span class="balise">&lt;</span><span class="balise-content">h2</span><span class="balise">&gt;</span><span class="content">HTML</span><span class="balise">&lt;/</span><span class="balise-content">h2</span><span class="balise">&gt;</span>
+                    <span class="balise">&lt;</span><span class="balise-content">em</span><span class="balise">&gt;</span><span class="balise">&lt;</span><span class="balise-content">strong</span><span class="balise">&gt;</span><span class="content">level: </span><span class="balise">&lt;/</span><span class="balise-content">strong</span><span class="balise">&gt;</span><span class="content">300</span><span class="balise">&lt;/</span><span class="balise-content">em</span><span class="balise">&gt;</span>
+                    <span class="balise">&lt;</span><span class="balise-content">p</span><span class="balise">&gt;</span><span class="balise">&lt;</span><span class="balise-content">strong</span><span class="balise">&gt;</span><span class="content">Description: </span><span class="balise">&lt;/</span><span class="balise-content">strong</span><span class="balise">&gt;</span><span class="content">Description</span><span class="balise">&lt;/</span><span class="balise-content">p</span><span class="balise">&gt;</span>
+                <span class="balise">&lt;/</span><span class="balise-content">li</span><span class="balise">&gt;</span>
+                <span class="balise">&lt;</span><span class="balise-content">li</span><span class="balise">&gt;</span>
+                    <span class="balise">&lt;</span><span class="balise-content">h2</span><span class="balise">&gt;</span><span class="content">CSS</span><span class="balise">&lt;/</span><span class="balise-content">h2</span><span class="balise">&gt;</span>
+                    <span class="balise">&lt;</span><span class="balise-content">em</span><span class="balise">&gt;</span><span class="balise">&lt;</span><span class="balise-content">strong</span><span class="balise">&gt;</span><span class="content">level: </span><span class="balise">&lt;/</span><span class="balise-content">strong</span><span class="balise">&gt;</span><span class="content">300</span><span class="balise">&lt;/</span><span class="balise-content">em</span><span class="balise">&gt;</span>
+                    <span class="balise">&lt;</span><span class="balise-content">p</span><span class="balise">&gt;</span><span class="balise">&lt;</span><span class="balise-content">strong</span><span class="balise">&gt;</span><span class="content">Description: </span><span class="balise">&lt;/</span><span class="balise-content">strong</span><span class="balise">&gt;</span><span class="content">Description</span><span class="balise">&lt;/</span><span class="balise-content">p</span><span class="balise">&gt;</span>
+                <span class="balise">&lt;/</span><span class="balise-content">li</span><span class="balise">&gt;</span>
+                <span class="balise">&lt;</span><span class="balise-content">li</span><span class="balise">&gt;</span>
+                    <span class="balise">&lt;</span><span class="balise-content">h2</span><span class="balise">&gt;</span><span class="content">JavaScript</span><span class="balise">&lt;/</span><span class="balise-content">h2</span><span class="balise">&gt;</span>
+                    <span class="balise">&lt;</span><span class="balise-content">em</span><span class="balise">&gt;</span><span class="balise">&lt;</span><span class="balise-content">strong</span><span class="balise">&gt;</span><span class="content">level: </span><span class="balise">&lt;/</span><span class="balise-content">strong</span><span class="balise">&gt;</span><span class="content">300</span><span class="balise">&lt;/</span><span class="balise-content">em</span><span class="balise">&gt;</span>
+                    <span class="balise">&lt;</span><span class="balise-content">p</span><span class="balise">&gt;</span><span class="balise">&lt;</span><span class="balise-content">strong</span><span class="balise">&gt;</span><span class="content">Description: </span><span class="balise">&lt;/</span><span class="balise-content">strong</span><span class="balise">&gt;</span><span class="content">Description</span><span class="balise">&lt;/</span><span class="balise-content">p</span><span class="balise">&gt;</span>
+                <span class="balise">&lt;/</span><span class="balise-content">li</span><span class="balise">&gt;</span>
+                <span class="balise">&lt;</span><span class="balise-content">li</span><span class="balise">&gt;</span>
+                    <span class="balise">&lt;</span><span class="balise-content">h2</span><span class="balise">&gt;</span><span class="content">PHP</span><span class="balise">&lt;/</span><span class="balise-content">h2</span><span class="balise">&gt;</span>
+                    <span class="balise">&lt;</span><span class="balise-content">em</span><span class="balise">&gt;</span><span class="balise">&lt;</span><span class="balise-content">strong</span><span class="balise">&gt;</span><span class="content">level: </span><span class="balise">&lt;/</span><span class="balise-content">strong</span><span class="balise">&gt;</span><span class="content">300</span><span class="balise">&lt;/</span><span class="balise-content">em</span><span class="balise">&gt;</span>
+                    <span class="balise">&lt;</span><span class="balise-content">p</span><span class="balise">&gt;</span><span class="balise">&lt;</span><span class="balise-content">strong</span><span class="balise">&gt;</span><span class="content">Description: </span><span class="balise">&lt;/</span><span class="balise-content">strong</span><span class="balise">&gt;</span><span class="content">Description</span><span class="balise">&lt;/</span><span class="balise-content">p</span><span class="balise">&gt;</span>
+                <span class="balise">&lt;/</span><span class="balise-content">li</span><span class="balise">&gt;</span>
+            <span class="balise">&lt;/</span><span class="balise-content">ul</span><span class="balise">&gt;</span>
+                    <button onclick="function cop() {
+                        const button = document.getElementById('list-big-card')
+                        copy(button, 'button#list-big-card span.copied')
+                    } cop()" value="<ul class='card big'>
+        <li>
+            <h2>HTML</h2>
+            <em><strong>level:</strong> 300</em>
+            <p><strong>Description: </strong>Description</p>
+        </li>
+        <li>
+            <h2>CSS</h2>
+            <em><strong>level:</strong> 300</em>
+            <p><strong>Description: </strong>Description</p>
+        </li>
+        <li>
+            <h2>JavaScript</h2>
+            <em><strong>level:</strong> 300</em>
+            <p><strong>Description: </strong>Description</p>
+        </li>
+        <li>
+            <h2>PHP</h2>
+            <em><strong>level:</strong> 300</em>
+            <p><strong>Description: </strong>Description</p>
+        </li>
+    </ul>" id="list-big-card">
+                        <i class="fa-solid fa-copy"></i>
+                        <span class="copy">Copy to clipboard</span>
+                        <span class="copied">Copied</span>
+                    </button>
+                    </code>
+                </pre>
+            </div>
+            <div>
+                <h2>List card with link</h2>
+                <ul class="card link">
+                    <li><a href="#">HTML</a></li>
+                    <li><a href="#">CSS</a></li>
+                    <li><a href="#">Script</a></li>
+                    <li><a href="#">PHP</a></li>
+                </ul>
+                <pre class="language-html">
+                    <code>
+            <span class="balise">&lt;</span><span class="balise-content">ul</span><span class="attribute"> class=</span><span class="string">"card link"</span><span class="balise">&gt;</span>
+                <span class="balise">&lt;</span><span class="balise-content">li</span><span class="balise">&gt;</span><span class="balise">&lt;</span><span class="balise-content">a</span><span class="attribute"> href=</span><span class="string">"#"</span><span class="balise">&gt;</span><span class="content">HTML</span><span class="balise">&lt;/</span><span class="balise-content">a</span><span class="balise">&gt;</span><span class="balise">&lt;/</span><span class="balise-content">li</span><span class="balise">&gt;</span>
+                <span class="balise">&lt;</span><span class="balise-content">li</span><span class="balise">&gt;</span><span class="balise">&lt;</span><span class="balise-content">a</span><span class="attribute"> href=</span><span class="string">"#"</span><span class="balise">&gt;</span><span class="content">CSS</span><span class="balise">&lt;/</span><span class="balise-content">a</span><span class="balise">&gt;</span><span class="balise">&lt;/</span><span class="balise-content">li</span><span class="balise">&gt;</span>
+                <span class="balise">&lt;</span><span class="balise-content">li</span><span class="balise">&gt;</span><span class="balise">&lt;</span><span class="balise-content">a</span><span class="attribute"> href=</span><span class="string">"#"</span><span class="balise">&gt;</span><span class="content">JavaScript</span><span class="balise">&lt;/</span><span class="balise-content">a</span><span class="balise">&gt;</span><span class="balise">&lt;/</span><span class="balise-content">li</span><span class="balise">&gt;</span>
+                <span class="balise">&lt;</span><span class="balise-content">li</span><span class="balise">&gt;</span><span class="balise">&lt;</span><span class="balise-content">a</span><span class="attribute"> href=</span><span class="string">"#"</span><span class="balise">&gt;</span><span class="content">PHP</span><span class="balise">&lt;/</span><span class="balise-content">a</span><span class="balise">&gt;</span><span class="balise">&lt;/</span><span class="balise-content">li</span><span class="balise">&gt;</span>
+            <span class="balise">&lt;/</span><span class="balise-content">ul</span><span class="balise">&gt;</span>
+                    <button onclick="function cop() {
+                        const button = document.getElementById('list-card-link')
+                        copy(button, 'button#list-card-link span.copied')
+                    } cop()" value="<ul class='card link'>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ul>" id="list-card-link">
+                        <i class="fa-solid fa-copy"></i>
+                        <span class="copy">Copy to clipboard</span>
+                        <span class="copied">Copied</span>
+                    </button>
+                    </code>
+                </pre>
+            </div>
+        </div>
+        <h1>Dark background<a name="dark-bg"></a></h1>
+        <div>
+            <section class="dark">
+                <h2>Dark section</h2>
+                <ul>
+                    <li><a href="#">HTML</a></li>
+                    <li><a href="#">CSS</a></li>
+                    <li><a href="#">JavaScript</a></li>
+                </ul>
+            </section>
+            <pre class="language-html">
+                <code>
+            <span class="balise">&lt;</span><span class="balise-content">section</span><span class="attribute"> class=</span><span class="string">"dark"</span><span class="balise">&gt;</span>
+                <span class="balise">&lt;</span><span class="balise-content">h2</span><span class="balise">&gt;</span><span class="content">Dark section</span><span class="balise">&lt;/</span><span class="balise-content">h2</span><span class="balise">&gt;</span>
+                <span class="balise">&lt;</span><span class="balise-content">ul</span><span class="balise">&gt;</span>
+                    <span class="balise">&lt;</span><span class="balise-content">li</span><span class="balise">&gt;</span><span class="balise">&lt;</span><span class="balise-content">a</span><span class="attribute"> href=</span><span class="string">"#"</span><span class="balise">&gt;</span><span class="content">HTML</span><span class="balise">&lt;/</span><span class="balise-content">a</span><span class="balise">&gt;</span><span class="balise">&lt;/</span><span class="balise-content">li</span><span class="balise">&gt;</span>
+                    <span class="balise">&lt;</span><span class="balise-content">li</span><span class="balise">&gt;</span><span class="balise">&lt;</span><span class="balise-content">a</span><span class="attribute"> href=</span><span class="string">"#"</span><span class="balise">&gt;</span><span class="content">CSS</span><span class="balise">&lt;/</span><span class="balise-content">a</span><span class="balise">&gt;</span><span class="balise">&lt;/</span><span class="balise-content">li</span><span class="balise">&gt;</span>
+                    <span class="balise">&lt;</span><span class="balise-content">li</span><span class="balise">&gt;</span><span class="balise">&lt;</span><span class="balise-content">a</span><span class="attribute"> href=</span><span class="string">"#"</span><span class="balise">&gt;</span><span class="content">JavaScript</span><span class="balise">&lt;/</span><span class="balise-content">a</span><span class="balise">&gt;</span><span class="balise">&lt;/</span><span class="balise-content">li</span><span class="balise">&gt;</span>
+                    <span class="balise">&lt;</span><span class="balise-content">li</span><span class="balise">&gt;</span><span class="balise">&lt;</span><span class="balise-content">a</span><span class="attribute"> href=</span><span class="string">"#"</span><span class="balise">&gt;</span><span class="content">PHP</span><span class="balise">&lt;/</span><span class="balise-content">a</span><span class="balise">&gt;</span><span class="balise">&lt;/</span><span class="balise-content">li</span><span class="balise">&gt;</span>
+                <span class="balise">&lt;/</span><span class="balise-content">ul</span><span class="balise">&gt;</span>
+            <span class="balise">&lt;/</span><span class="balise-content">section</span><span class="balise">&gt;</span>
+                    <button onclick="function cop() {
+                        const button = document.getElementById('dark-section')
+                        copy(button, 'button#dark-section span.copied')
+                    } cop()" value="<section class='dark'>
+        <h2>Dark section</h2>
+        <ul>
+            <li><a href='#'>HTML</a></li>
+            <li><a href='#'>CSS</a></li>
+            <li><a href='#'>JavaScript</a></li>
+        </ul>
+    </section>" id="dark-section">
+                        <i class="fa-solid fa-copy"></i>
+                        <span class="copy">Copy to clipboard</span>
+                        <span class="copied">Copied</span>
+                    </button>
+                </code>
+            </pre>
+        </div>
+        <h1>Form<a name="form"></a></h1>
+        <div>
+            <form>
+                <fieldset>
+                    <label for="email">Email</label>
+                    <input id="email" type="email" name="email" placeholder="example@gmail.com" />
+                </fieldset>
+                <fieldset>
+                    <label for="password">Password</label>
+                    <input id="password" type="password" name="password" placeholder="***********" />
+                </fieldset>
+                <button class="standard" type="submit">Connection</button>
+            </form>
+            <pre class="language-html">
+                <code>
+            <span class="balise">&lt;</span><span class="balise-content">form</span><span class="balise">&gt;</span>
+                <span class="balise">&lt;</span><span class="balise-content">fieldset</span><span class="balise">&gt;</span>
+                    <span class="balise">&lt;</span><span class="balise-content">label</span><span class="attribute"> for=</span><span class="string">"email"</span><span class="balise">&gt;</span><span class="content">Email</span><span class="balise">&lt;/</span><span class="balise-content">label</span><span class="balise">&gt;</span>
+                    <span class="balise">&lt;</span><span class="balise-content">input</span><span class="attribute"> id=</span><span class="string">"email"</span><span class="attribute"> type=</span><span class="string">"email"</span><span class="attribute"> name=</span><span class="string">"email"</span><span class="attribute"> placeholder=</span><span class="string">"example@gmail.com"</span><span class="balise"> /&gt;</span>
+                <span class="balise">&lt;/</span><span class="balise-content">fieldset</span><span class="balise">&gt;</span>
+                <span class="balise">&lt;</span><span class="balise-content">fieldset</span><span class="balise">&gt;</span>
+                    <span class="balise">&lt;</span><span class="balise-content">label</span><span class="attribute"> for=</span><span class="string">"password"</span><span class="balise">&gt;</span><span class="content">Password</span><span class="balise">&lt;/</span><span class="balise-content">label</span><span class="balise">&gt;</span>
+                    <span class="balise">&lt;</span><span class="balise-content">input</span><span class="attribute"> id=</span><span class="string">"password"</span><span class="attribute"> type=</span><span class="string">"password"</span><span class="attribute"> name=</span><span class="string">"password"</span><span class="attribute"> placeholder=</span><span class="string">"***********"</span><span class="balise"> /&gt;</span>
+                <span class="balise">&lt;/</span><span class="balise-content">fieldset</span><span class="balise">&gt;</span>
+                <span class="balise">&lt;</span><span class="balise-content">button</span><span class="attribute"> class=</span><span class="string">"standard" </span><span class="attribute">type=</span><span class="string">"submit"</span><span class="balise">&gt;</span><span class="content">Connection</span><span class="balise">&lt;/</span><span class="balise-content">button</span><span class="balise">&gt;</span>
+            <span class="balise">&lt;/</span><span class="balise-content">form</span><span class="balise">&gt;</span>
+                    <button onclick="function cop() {
+                        const button = document.getElementById('form')
+                        copy(button, 'button#form span.copied')
+                    } cop()" value="<form>
+        <fieldset>
+            <label for='email'>Email</label>
+            <input id='email' type='email' name='email' placeholder='example@gmail.com' />
+        </fieldset>
+        <fieldset>
+            <label for='password'>Password</label>
+            <input id='password' type='password' name='password' placeholder='***********' />
+        </fieldset>
+        <button class='standard' type='submit'>Connection</button>
+    </form>" id="form">
+                        <i class="fa-solid fa-copy"></i>
+                        <span class="copy">Copy to clipboard</span>
+                        <span class="copied">Copied</span>
+                    </button>
+                </code>
+            </pre>
+        </div>
+        <h1>Footer<a name="footer"></a></h1>
+        <div>
+            <footer>
+                <h2>Footer</h2>
+                <ul>
+                    <li><a href="#">HTML</a></li>
+                    <li><a href="#">CSS</a></li>
+                    <li><a href="#">JavaScript</a></li>
+                </ul>
+            </footer>
+            <pre class="language-html">
+                <code>
+            <span class="balise">&lt;</span><span class="balise-content">footer</span><span class="balise">&gt;</span>
+                <span class="balise">&lt;</span><span class="balise-content">h2</span><span class="balise">&gt;</span><span class="content">Footer</span><span class="balise">&lt;/</span><span class="balise-content">h2</span><span class="balise">&gt;</span>
+                <span class="balise">&lt;</span><span class="balise-content">ul</span><span class="balise">&gt;</span>
+                    <span class="balise">&lt;</span><span class="balise-content">li</span><span class="balise">&gt;</span><span class="balise">&lt;</span><span class="balise-content">a</span><span class="attribute"> href=</span><span class="string">"#"</span><span class="balise">&gt;</span><span class="content">HTML</span><span class="balise">&lt;/</span><span class="balise-content">a</span><span class="balise">&gt;</span><span class="balise">&lt;/</span><span class="balise-content">li</span><span class="balise">&gt;</span>
+                    <span class="balise">&lt;</span><span class="balise-content">li</span><span class="balise">&gt;</span><span class="balise">&lt;</span><span class="balise-content">a</span><span class="attribute"> href=</span><span class="string">"#"</span><span class="balise">&gt;</span><span class="content">CSS</span><span class="balise">&lt;/</span><span class="balise-content">a</span><span class="balise">&gt;</span><span class="balise">&lt;/</span><span class="balise-content">li</span><span class="balise">&gt;</span>
+                    <span class="balise">&lt;</span><span class="balise-content">li</span><span class="balise">&gt;</span><span class="balise">&lt;</span><span class="balise-content">a</span><span class="attribute"> href=</span><span class="string">"#"</span><span class="balise">&gt;</span><span class="content">JavaScript</span><span class="balise">&lt;/</span><span class="balise-content">a</span><span class="balise">&gt;</span><span class="balise">&lt;/</span><span class="balise-content">li</span><span class="balise">&gt;</span>
+                    <span class="balise">&lt;</span><span class="balise-content">li</span><span class="balise">&gt;</span><span class="balise">&lt;</span><span class="balise-content">a</span><span class="attribute"> href=</span><span class="string">"#"</span><span class="balise">&gt;</span><span class="content">PHP</span><span class="balise">&lt;/</span><span class="balise-content">a</span><span class="balise">&gt;</span><span class="balise">&lt;/</span><span class="balise-content">li</span><span class="balise">&gt;</span>
+                <span class="balise">&lt;/</span><span class="balise-content">ul</span><span class="balise">&gt;</span>
+            <span class="balise">&lt;/</span><span class="balise-content">footer</span><span class="balise">&gt;</span>
+                    <button onclick="function cop() {
+                        const button = document.getElementById('footer')
+                        copy(button, 'button#footer span.copied')
+                    } cop()" value="<footer>
+        <h2>Footer</h2>
+        <ul>
+            <li><a href='#'>HTML</a></li>
+            <li><a href='#'>CSS</a></li>
+            <li><a href='#'>JavaScript</a></li>
+        </ul>
+    </footer>" id="footer">
+                        <i class="fa-solid fa-copy"></i>
+                        <span class="copy">Copy to clipboard</span>
+                        <span class="copied">Copied</span>
+                    </button>
+                </code>
+            </pre>
+        </div>
         </section>
-        <pre>
-            <code class="language-xml">
-&lt;section class="dark"&gt;
-    &lt;h2&gt;Dark section&lt;/h2&gt;
-    &lt;ul&gt;
-        &lt;li&gt;&lt;a href="#"&gt;HTML&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#"&gt;CSS&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#"&gt;JavaScript&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-&lt;/section&gt;
-            </code>
-        </pre>
-    </div>
-    <h1>Form</h1>
-    <div>
-        <form>
-            <fieldset>
-                <label for="email">Email</label>
-                <input id="email" type="email" name="email" placeholder="example@gmail.com" />
-            </fieldset>
-            <fieldset>
-                <label for="password">Password</label>
-                <input id="password" type="password" name="password" placeholder="***********" />
-            </fieldset>
-            <button class="standard" type="submit">Connection</button>
-        </form>
-        <pre>
-            <code class="language-xml">
-&lt;form&gt;
-    &lt;fieldset&gt;
-        &lt;label for="email"&gt;Email&lt;/label&gt;
-        &lt;input id="email" type="email" name="email" placeholder="example@gmail.com" /&gt;
-    &lt;/fieldset&gt;
-    &lt;fieldset&gt;
-        &lt;label for="password"&gt;Password&lt;/label&gt;
-        &lt;input id="password" type="password" name="password" placeholder="***********" /&gt;
-    &lt;/fieldset&gt;
-    &lt;button class="standard" type="submit"&gt;Connection&lt;/button&gt;
-&lt;/form&gt;
-            </code>
-        </pre>
-    </div>
-    <h1>Footer</h1>
-    <div>
-        <footer>
-            <h2>Footer</h2>
-            <ul>
-                <li><a href="#">HTML</a></li>
-                <li><a href="#">CSS</a></li>
-                <li><a href="#">JavaScript</a></li>
-            </ul>
-        </footer>
-        <pre>
-            <code class="language-xml">
-&lt;footer&gt;
-    &lt;h2&gt;Footer&lt;/h2&gt;
-    &lt;ul&gt;
-        &lt;li&gt;&lt;a href="#"&gt;HTML&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#"&gt;CSS&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#"&gt;JavaScript&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-&lt;/footer&gt;
-            </code>
-        </pre>
-    </div>
-    <script src="prism.js"></script>
+    </main>
+    <script>
+        function copy(target, str) {
+            const copied = document.querySelector(str)
+
+            copied.classList.add('active')
+
+            setTimeout(() => {
+                copied.classList.remove('active')
+            }, 700)
+
+            navigator.clipboard.writeText(target.value)
+        }
+    </script>
 </body>
 </html>

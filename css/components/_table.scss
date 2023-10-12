@@ -1,0 +1,39 @@
+table {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  border: 1px solid $border-black-05;
+  font-size: .9rem;
+
+  & * {
+    border-spacing: 0;
+  }
+
+  thead {
+    border-radius: 10px 10px 0 0;
+    background: $background-black;
+
+    th {
+      font-weight: 600;
+      text-transform: uppercase;
+      color: $text-white;
+      padding: 1rem;
+    }
+  }
+
+  tbody {
+    border-radius: 0 0 10px 10px;
+
+    td {
+      padding: 1rem;
+    }
+
+    tr:nth-child(even) {
+      background: $border-black-05;
+    }
+  }
+
+  th, td {
+    border-radius: 5px;
+  }
+}

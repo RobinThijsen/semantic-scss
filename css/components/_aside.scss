@@ -1,0 +1,65 @@
+main.aside {
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+
+  aside {
+    width: 30%;
+    height: calc(100vh - 30vh);
+    padding: 3vh 1.5vw;
+    border-right: 1px solid $border-black-05;
+    position: fixed;
+    top: 15vh;
+    left: 3vw;
+    font-size: 1.2rem;
+
+    & > menu li {
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+
+      span {
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        color: $text-black;
+        font-weight: 700;
+      }
+
+      menu {
+        margin-left: 2vw;
+
+        li a {
+          color: $border-black-5;
+
+          &:hover {
+            color: $text-blue;
+          }
+
+          &::after {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  section {
+    width: 70%;
+  }
+}
+
+body.dark main.aside aside {
+
+  menu span {
+    color: $text-white;
+  }
+
+  & > menu menu li a {
+    color: $border-white-2;
+
+    &:hover {
+      color: $text-white;
+    }
+  }
+}
